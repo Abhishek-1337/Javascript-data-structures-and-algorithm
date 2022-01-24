@@ -1,5 +1,5 @@
 //Find largest sum contiguous array
-
+//Kadane's Algorithm
 function largestSum(){
 	let sum=a[0];
 	let max=a[0];
