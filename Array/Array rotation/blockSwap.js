@@ -41,8 +41,8 @@
 
 function swap(arr,start,end,k){
 	for(let i=0;i<k;i++){
-		let temp=arr[end+i];
-		arr[end+i]=arr[start+i];
-		arr[start+i]=temp;
+  		let temp=arr[end+i];
+  		arr[end+i]=arr[start+i];
+  		arr[start+i]=temp;
 	}
 }
