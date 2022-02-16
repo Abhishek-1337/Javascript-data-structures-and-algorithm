@@ -93,9 +93,9 @@ class BinarySearchTree{
 		var currNode = this.root,
 		    visited = [];
 		function traverseHelper(currNode){
-			if(currNode.left) traverseHelper(currNode.left);
+			currNode.left && traverseHelper(currNode.left);
 			visited.push(currNode.value);
-			if(currNode.right) traverseHelper(currNode.right);
+			currNode.right && traverseHelper(currNode.right);
 		}
 		traverseHelper(currNode);
 		return visited;
