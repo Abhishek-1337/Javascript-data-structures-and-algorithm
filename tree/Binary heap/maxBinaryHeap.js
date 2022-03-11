@@ -32,6 +32,9 @@ class MaxBinaryHeap{
 		if(this.values.length > 0){
 			this.values[0] = end;
 		    this.sinkDown();
+		    // this.recurSinkDown(0, 1, 2, this.values[0]);
+
+		    console.log(this.values);
 		}
 		return max;
 	}
@@ -65,4 +68,34 @@ class MaxBinaryHeap{
 		    index=swap;
 		}
 	}
+
+	recurSinkDown(index, leftChildIdx, rightChildIdx, element){
+		let 
+		swap = null,
+		leftChild = this.values[leftChildIdx],
+		rightChild = this.values[rightChildIdx];
+
+		if(leftChildIdx < this.values.length){
+			
+			if(leftChild > element){
+				swap = leftChildIdx;
+			}
+		}
+
+		if(rightChildIdx < this.values.length){
+			if((swap === null && rightChild > element) || (swap !== null && rightChild > leftChild)){
+				swap = rightChildIdx;
+			}
+		}
+
+		if(swap === null)return;
+		this.values[index] = this.values[swap];
+		this.values[swap] = element;
+        
+		this.recurSinkDown(swap, 2*swap+1, 2*swap+2, element); 
+
+	}
 }
+
+var a = new MaxBinaryHeap();
+a.extractMax();
